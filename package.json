@@ -2,13 +2,15 @@
   "name": "sensation-theme",
   "displayName": "sensation-theme",
   "description": "Sensation is a theme inspired by Nestlé's Sensação chocolate. Dark mode blends brown with pink and beige accents, while light mode offers a beige base with brown and pink details. Coding never felt this smooth.",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "engines": {
     "vscode": "^1.104.0"
   },
   "categories": [
     "Themes"
   ],
+  "main": "./src/extension.js",
+  "activationEvents": ["*"],
   "contributes": {
     "themes": [
       {
@@ -17,10 +19,36 @@
         "path": "./themes/sensation-dark-theme.json"
       },
       {
-      "label": "Light Sensation",
-      "uiTheme": "vs",
-      "path": "./themes/sensation-light-theme.json"
+        "label": "Light Sensation",
+        "uiTheme": "vs",
+        "path": "./themes/sensation-light-theme.json"
+      },
+      {
+        "label": "Switch Sensation",
+        "uiTheme": "vs-dark",
+        "path": "./themes/placeholder.json"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "title": "Automatic Switch Settings",
+      "properties": {
+        "autoTheme.switchTime": {
+          "type": "string",
+          "default": "18:30",
+          "description": "Time in HH:MM format to switch from light to dark theme."
+        },
+        "autoTheme.lightTheme": {
+          "type": "string",
+          "default": "Light Sensation",
+          "description": "Theme used during the day."
+        },
+        "autoTheme.darkTheme": {
+          "type": "string",
+          "default": "Dark Sensation",
+          "description": "Theme used during the day."
+        }
+      }
+    }
   }
 }

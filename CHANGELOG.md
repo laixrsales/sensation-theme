@@ -5,7 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 ### Added
-- Upcoming **dynamic theme** that automatically switches between dark and light modes depending on the time of day.
+- Future improvements for themes (to be implemented).
+
+## [1.2.0] - 2025-09-29
+### Added
+- **Dynamic theme** that automatically switches between dark and light modes depending on the time of day.
 
 ## [1.1.0] - 2025-09-29
 ### Added
@@ -16,4 +20,4 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 ## [1.0.0] - 2025-09-29
 ### Added
 - Initial **dark theme** for VSCode.  
-- Palette based on **brown**, with **pink** and **beige** highlights. 
+- Palette based on **brown**, with **pink** and **beige** highlights.
