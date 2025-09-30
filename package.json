@@ -2,7 +2,7 @@
   "name": "sensation-theme",
   "displayName": "sensation-theme",
   "description": "Sensation is a theme inspired by Nestlé's Sensação chocolate. Dark mode blends brown with pink and beige accents, while light mode offers a beige base with brown and pink details. Coding never felt this smooth.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.104.0"
   },
@@ -15,6 +15,11 @@
         "label": "Dark Sensation",
         "uiTheme": "vs-dark",
         "path": "./themes/sensation-dark-theme.json"
+      },
+      {
+      "label": "Light Sensation",
+      "uiTheme": "vs",
+      "path": "./themes/sensation-light-theme.json"
       }
     ]
   }
