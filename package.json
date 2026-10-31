@@ -46,7 +46,7 @@
         "autoTheme.darkTheme": {
           "type": "string",
           "default": "Dark Sensation",
-          "description": "Theme used during the day."
+          "description": "Theme used during the night."
         }
       }
     }

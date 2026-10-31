@@ -1,0 +1,16 @@
+schema: spec-driven
+
+context: | 
+  Extensão para o VS Code que oferece três temas diferentes para o editor, permitindo que os usuários escolham entre
+  um tema claro, um tema escuro e um tema que alterna entre os dois temas anteriores de acordo com a hora do dia. O tema 
+  claro é ideal para ambientes bem iluminados, enquanto o tema escuro é mais confortável para uso em ambientes com pouca
+  luz. O tema que alterna automaticamente proporciona uma experiência visual adaptativa, ajustando-se às condições de 
+  iluminação do ambiente do usuário.
+  Os dois primeiro temas (sensation-light-theme e sensation-dark-theme) já estão implementados e não requerem nenhuma 
+  alteração. O terceiro tema (sensation-switch-theme) ainda está em desenvolvimento.
+  O projeto conta com um changelog detalhado que documenta todas as alterações feitas nos temas, incluindo melhorias de 
+  desempenho, correções de bugs e adições de novos recursos. O changelog é atualizado regularmente para manter os 
+  usuários informados sobre as últimas mudanças e melhorias na extensão.
+  Além do tema switch, ainda falta implementar o README.md, que fornecerá informações detalhadas sobre a extensão, 
+  incluindo instruções de instalação, configuração e uso. O README.md também incluirá exemplos de código e capturas de 
+  tela para ajudar os usuários a entender melhor como utilizar a extensão e aproveitar ao máximo seus recursos.

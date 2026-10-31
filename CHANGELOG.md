@@ -5,7 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 ### Added
-- Future improvements for themes (to be implemented).
+- **OpenSpec** setup for spec-driven planning of changes (`openspec/` directory and project context).
+- Claude Code skills and commands for the OpenSpec workflow (`.claude/`).
+
+### Fixed
+- Description of the `autoTheme.darkTheme` setting (theme used during the night).
 
 ## [1.2.0] - 2025-09-29
 ### Added
