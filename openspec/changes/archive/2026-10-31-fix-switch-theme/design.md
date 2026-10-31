@@ -84,13 +84,14 @@ Como rede de segurança contra timers atrasados, existe um intervalo de 1 minuto
 
 - `sensation.switch.lightTime` tem padrão "06:00" e `sensation.switch.darkTime` tem padrão "18:30". Os dois aceitam string HH:MM, com `pattern` no schema do `package.json` para o editor sinalizar valores inválidos.
 - A validação acontece em runtime com a regex `^([01]\d|2[0-3]):[0-5]\d$`. Um valor inválido cai no padrão. Para aceitar entradas legadas como "6:30", a hora com 1 dígito também é aceita.
-- Fallback do `darkTime`: se `inspect("sensation.switch.darkTime")` não tem valor global nem de workspace, a extensão usa `autoTheme.switchTime` quando ele é válido.
+- Não há fallback para `autoTheme.switchTime`: a extensão ainda não foi publicada, então não há configuração antiga para migrar.
 - As configurações `autoTheme.lightTheme` e `autoTheme.darkTheme` são removidas e os nomes dos temas ficam como constantes.
 - Se `lightTime` for igual a `darkTime`, o tema fica sempre escuro. A regra do intervalo vazio já produz esse resultado.
 
 ### 8. Entrada do tema e ativação
 
-- "Switch Sensation" passa a apontar para `./themes/sensation-dark-theme.json` com `uiTheme: "vs-dark"`, e o `placeholder.json` é removido.
+- "Switch Sensation" passa a apontar para um arquivo próprio, `./themes/sensation-switch-theme.json`, que só faz `"include": "./sensation-dark-theme.json"`. O `placeholder.json` é removido.
+- O arquivo precisa ser próprio porque o VS Code monta o id interno do tema a partir de `uiTheme` + caminho do arquivo, sem considerar o `label`. Se o Switch apontasse direto para o JSON do Dark, os dois temas teriam o mesmo id: selecionar "Switch Sensation" gravaria "Dark Sensation" e o modo nunca ligaria. Esse problema foi encontrado no teste manual.
 - `activationEvents` passa a `["onStartupFinished"]`. Desde o VS Code 1.74, os comandos contribuídos ativam a extensão sem precisar declarar evento.
 - O comando `sensation.disableAutoSwitch` aparece como "Sensation: Disable Auto Switch". Ele desliga o modo, cancela os timers e mostra uma mensagem informativa.
 
@@ -116,7 +117,7 @@ O VS Code não emite `onDidChangeConfiguration` quando o valor de `workbench.col
 
 ## Migration Plan
 
-- O `autoTheme.switchTime` continua sendo lido como fallback. Nenhuma ação é necessária do usuário.
+- As configurações `autoTheme.*` são removidas sem migração, porque a extensão ainda não foi publicada.
 - Quem tem "Switch Sensation" selecionado: na ativação, a decisão 2 liga o modo automaticamente.
 - Quem tem "Light Sensation" ou "Dark Sensation" ativo por causa do bug antigo: o modo não é ligado, já que não há estado salvo. Essa pessoa precisa selecionar "Switch Sensation" de novo. Isso vai registrado no CHANGELOG.
 - Rollback: reverter o commit. O `globalState` órfão é inofensivo.

@@ -126,13 +126,6 @@ Se um horário configurado não estiver no formato HH:MM válido (horas 00 a 23,
 - **WHEN** `sensation.switch.lightTime` vale "25:00"
 - **THEN** a extensão usa 06:00 como início do claro
 
-### Requirement: Compatibilidade com a configuração antiga
-Se `sensation.switch.darkTime` não tiver sido definido pelo usuário e a configuração antiga `autoTheme.switchTime` tiver um valor válido, a extensão SHALL usar esse valor como início do escuro.
-
-#### Scenario: Usuário com configuração antiga
-- **WHEN** o usuário tem `autoTheme.switchTime` = "19:00" e não definiu `sensation.switch.darkTime`
-- **THEN** o escuro começa às 19:00
-
 ### Requirement: Aparência antes da ativação
 O tema "Switch Sensation" SHALL ter a aparência do Dark Sensation, para que o editor nunca mostre um tema vazio ou quebrado enquanto a extensão ainda não aplicou o tema do horário.
 

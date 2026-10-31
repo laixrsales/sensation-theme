@@ -14,8 +14,8 @@ A extensão deve funcionar sem configuração: quem instala só escolhe "Switch 
 - **Known issue**: se o usuário escolher o tema que o switch já aplicou (por exemplo, "Light Sensation" durante o horário do claro), o VS Code não emite nenhum evento e o modo continua ligado. O contorno é o comando "Sensation: Disable Auto Switch". O caso fica documentado no README.
 - Os dois horários de transição passam a ser configuráveis pelo usuário, com padrões 06:00 (início do claro) e 18:30 (início do escuro) que dispensam configuração. Hoje o início do claro está fixo no código.
 - Horários inválidos nas configurações deixam de quebrar a lógica: a extensão usa o horário padrão.
-- O `placeholder.json` vazio é removido. A entrada "Switch Sensation" passa a apontar para o arquivo do tema escuro, para nunca exibir um tema quebrado.
-- **BREAKING**: as configurações `autoTheme.*` passam para o namespace `sensation.switch.*`. O valor antigo de `autoTheme.switchTime` continua sendo lido como fallback. As configurações `autoTheme.lightTheme` e `autoTheme.darkTheme` são removidas, e o switch alterna sempre entre os dois temas Sensation.
+- O `placeholder.json` vazio é removido. A entrada "Switch Sensation" passa a ter um arquivo próprio que reaproveita o tema escuro (`include`), para nunca exibir um tema quebrado.
+- **BREAKING**: as configurações `autoTheme.*` passam para o namespace `sensation.switch.*`. O valor antigo de `autoTheme.switchTime` não é migrado, já que a extensão ainda não foi publicada. As configurações `autoTheme.lightTheme` e `autoTheme.darkTheme` são removidas, e o switch alterna sempre entre os dois temas Sensation.
 - A ativação muda de `"*"` para `onStartupFinished`.
 - O CHANGELOG ganha uma entrada **Fixed** para a correção do switch.
 - É criado um `README.md` mínimo, com o uso do switch (como ligar, desligar e mudar os horários) e uma seção **Known Issues**. O README completo, com instalação e screenshots, fica para uma change separada.

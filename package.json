@@ -10,7 +10,7 @@
     "Themes"
   ],
   "main": "./src/extension.js",
-  "activationEvents": ["*"],
+  "activationEvents": ["onStartupFinished"],
   "contributes": {
     "themes": [
       {
@@ -26,27 +26,33 @@
       {
         "label": "Switch Sensation",
         "uiTheme": "vs-dark",
-        "path": "./themes/placeholder.json"
+        "path": "./themes/sensation-switch-theme.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "sensation.disableAutoSwitch",
+        "title": "Disable Auto Switch",
+        "category": "Sensation"
       }
     ],
     "configuration": {
       "type": "object",
-      "title": "Automatic Switch Settings",
+      "title": "Sensation",
       "properties": {
-        "autoTheme.switchTime": {
+        "sensation.switch.lightTime": {
+          "type": "string",
+          "default": "06:00",
+          "pattern": "^([01]?\\d|2[0-3]):[0-5]\\d$",
+          "patternErrorMessage": "Use the 24-hour HH:MM format, e.g. 06:00.",
+          "markdownDescription": "Time (24-hour `HH:MM`) when **Switch Sensation** changes to Light Sensation. Invalid values fall back to `06:00`."
+        },
+        "sensation.switch.darkTime": {
           "type": "string",
           "default": "18:30",
-          "description": "Time in HH:MM format to switch from light to dark theme."
-        },
-        "autoTheme.lightTheme": {
-          "type": "string",
-          "default": "Light Sensation",
-          "description": "Theme used during the day."
-        },
-        "autoTheme.darkTheme": {
-          "type": "string",
-          "default": "Dark Sensation",
-          "description": "Theme used during the night."
+          "pattern": "^([01]?\\d|2[0-3]):[0-5]\\d$",
+          "patternErrorMessage": "Use the 24-hour HH:MM format, e.g. 18:30.",
+          "markdownDescription": "Time (24-hour `HH:MM`) when **Switch Sensation** changes to Dark Sensation. Invalid values fall back to `18:30`."
         }
       }
     }
